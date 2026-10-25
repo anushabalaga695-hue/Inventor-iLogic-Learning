@@ -1,0 +1,23 @@
+Dim Length, Width As Integer
+Dim Material As String
+
+Length = InputBox("Enter the Length","Title")
+Width = InputBox("Enter the Width","Title")
+Material = InputBox("Enter the Material","Title")
+
+If Length <= 100 Then
+
+    Thickness = 3
+    MessageBox.Show("Thickness = 3")
+
+ElseIf Length > 100 And Length < 500 Then
+
+    Thickness = 6
+    MessageBox.Show("Thickness = 6")
+
+Else
+
+    Thickness = 10
+    MessageBox.Show("Thickness = 10")
+
+End If
