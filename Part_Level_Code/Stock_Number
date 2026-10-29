@@ -1,0 +1,11 @@
+GoExcel.Open("Stock_List.xlsx", "BilletSize")
+
+' Find the row using your model parameters M_Length and M_Width
+Dim rowIndex As Integer = GoExcel.FindRow("Stock_List.xlsx", "BilletSize", "Length", ">=", M_Length, "Width", ">=", M_Width)
+
+' Directly get the Stock value from the found row and show it
+Dim stockVal As String = GoExcel.CurrentRowValue("Stock")
+Dim PartNumber As String =ThisDoc.FileName(False) 
+iProperties.Value("Project", "Part Number") = PartNumber
+iProperties.Value("Project", "Stock Number") = stockVal
+MessageBox.Show("Part Number = " & PartNumber & vbCrLf & "Stock Value = " & stockVal, "Stock Title")
