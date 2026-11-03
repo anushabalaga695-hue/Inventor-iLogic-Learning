@@ -1,0 +1,8 @@
+Dim oHole As HoleFeature = ThisDoc.Document.ComponentDefinition.Features.HoleFeatures("Hole2")
+Dim fastenerSize As String = oHole.ClearanceInfo.FastenerSize ' e.g., "M10", "M12"
+Select Case fastenerSize
+Case "M5", "M6", "M8", "M10", "M12", "M16", "M20", "M24", "M30", "M36"
+     MessageBox.Show("Hole Details: " & fastenerSize, "Hole size")
+ Case Else
+	 MessageBox.Show("Please select hole size from this list:" & vbCrLf & "M5, M6, M8, M10, M12, M16, M20, M24, M30, M36", "Hole size")
+ End Select
